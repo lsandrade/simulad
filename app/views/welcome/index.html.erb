@@ -1,0 +1,8 @@
+<h1>Teste de página Index na Welcome controller</h1>
+<h2>Teste teste</h2>
+<p><%= @variavel %></p>
+
+<%= link_to 'Usuários', users_path %>
+<%=	link_to 'Novo usuário', controller: :users, action: :new %>
+<%= render 'partial' %>
+<h3>I18n: <%= t('hello') %></h3>
