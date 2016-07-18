@@ -1,14 +1,13 @@
 "pt-BR":
   hello: "Olá mundo"
-  #date:
-  #  formats:
-  #	  default: ! '%d/%m/%Y'
+
   activerecord:
     models:
-      user: Usuário
+      user: Usuario
     attributes:
       id: "Identificador"
       name: "Nome"
       email: "E-mail"
       birthday: "Nascimento"
       obs: "Observações"
+      created_at: "Criado em"

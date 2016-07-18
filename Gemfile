@@ -46,3 +46,6 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'mysql2'
+
+# Twitter Bootstrap for Rails 3.x - 4 Asset Pipeline
+gem "twitter-bootstrap-rails"
