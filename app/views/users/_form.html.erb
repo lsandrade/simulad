@@ -37,6 +37,16 @@
     <%=f.error_span(:birthday) %>
   </div>
   <div class="form-group">
+    <%= f.label :sex, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.select(:sex, 
+        options_for_select([["Masculino", "M"], ["Feminino", "F"]], @user.sex),
+        {include_blank: "Selecione"} , :class => 'form-control') %>
+    </div>
+    <%=f.error_span(:sex) %>
+  </div>
+  
+  <div class="form-group">
     <%= f.label :obs, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
       <%= f.text_field :obs, :class => 'form-control' %>

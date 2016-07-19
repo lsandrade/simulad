@@ -1,0 +1,27 @@
+<%= form_for(@simulation) do |f| %>
+  <% if @simulation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@simulation.errors.count, "error") %> prohibited this simulation from being saved:</h2>
+
+      <ul>
+      <% @simulation.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :user_id, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%=  
+        f.collection_select(:user_id, User.all, :id, :name, include_blank: true)
+      %>
+    </div>
+    <%=f.error_span(:user_id) %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160709223029) do
+ActiveRecord::Schema.define(version: 20160719013131) do
+
+  create_table "simulations", force: :cascade do |t|
+    t.integer  "user_id",    limit: 4
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
+
+  add_index "simulations", ["user_id"], name: "index_simulations_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -20,6 +28,8 @@ ActiveRecord::Schema.define(version: 20160709223029) do
     t.text     "obs",        limit: 65535
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
+    t.string   "sex",        limit: 255
   end
 
+  add_foreign_key "simulations", "users"
 end

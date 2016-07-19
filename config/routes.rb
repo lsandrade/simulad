@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :simulations
   root 'welcome#index'
 
   resources :users
