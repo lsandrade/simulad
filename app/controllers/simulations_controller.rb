@@ -61,7 +61,7 @@ class SimulationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def simulation_params
-      params.require(:simulation).permit(:user_id)
+      params.require(:simulation).permit(:name, :user_id)
     end
 
     def set_users
