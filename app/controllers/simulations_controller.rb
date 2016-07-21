@@ -1,5 +1,6 @@
 class SimulationsController < ApplicationController
   before_action :set_simulation, only: [:show, :edit, :update, :destroy]
+  before_action :set_users, only: [ :edit, :update, :new]
 
   def index
     @simulations = Simulation.all
@@ -61,6 +62,10 @@ class SimulationsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def simulation_params
       params.require(:simulation).permit(:user_id)
+    end
+
+    def set_users
+      @users = User.all
     end
 
 end

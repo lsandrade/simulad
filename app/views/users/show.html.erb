@@ -15,6 +15,12 @@
   <dt><strong><%= model_class.human_attribute_name(:obs) %>:</strong></dt>
   <dd><%= @user.obs %></dd>
 </dl>
+<dl>
+  <% @user.simulations.each do |simulaltion| %>
+    <dt><strong> User:</strong><%= simulaltion.user_id %></dt>
+
+  <% end %>
+</dl>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),
               users_path, :class => 'btn btn-default'  %>
