@@ -14,10 +14,12 @@
   <dd><%= @user.sex %></dd>
   <dt><strong><%= model_class.human_attribute_name(:obs) %>:</strong></dt>
   <dd><%= @user.obs %></dd>
+  <dt><strong>Image</strong></dt>
+  <dd><%= image_tag @user.avatar.url %></dd>
 </dl>
 <dl>
-  <% @user.simulations.each do |simulaltion| %>
-    <dt><strong> User:</strong><%= simulaltion.user_id %></dt>
+  <% @user.simulations.each do |simulation| %>
+    <dt><strong> User:</strong><%= simulation.name %></dt>
 
   <% end %>
 </dl>

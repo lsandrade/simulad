@@ -49,3 +49,6 @@ gem 'mysql2'
 
 # Twitter Bootstrap for Rails 3.x - 4 Asset Pipeline
 gem "twitter-bootstrap-rails"
+
+# Easy file attachment management for ActiveRecord https://thoughtbot.com/open-source
+gem "paperclip", "~> 5.0.0"
