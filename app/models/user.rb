@@ -10,4 +10,8 @@ class User < ActiveRecord::Base
 	def teste
 		"teste teste"
 	end
+
+	def self.search(query)
+		where("name like ?","%#{query}%")
+	end
 end
