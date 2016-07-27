@@ -2,7 +2,12 @@
 <h2>Teste teste</h2>
 <p><%= @variavel %></p>
 
-<%= link_to 'Usuários', users_path %>
-<%=	link_to 'Novo usuário', controller: :users, action: :new %>
+<ul>
+	<li><%= link_to 'Usuários', users_path %></li>
+	<li><%=	link_to 'Novo usuário', controller: :users, action: :new %></li>
+	<li><%= link_to 'Simulações', simulations_path %></li>
+</ul>
+
+
 <%= render 'partial' %>
 <h3>I18n: <%= t('hello') %></h3>
