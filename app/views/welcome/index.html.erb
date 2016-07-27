@@ -3,9 +3,18 @@
 <p><%= @variavel %></p>
 
 <ul>
+	<% if !user_signed_in? %>
+	<li><%=	link_to 'Login', new_user_session_path %></li>
+	<% else %>
+	<li>Usuario atual: <%= current_user.email %> </li>
+	<li>Session: <%= user_session %> </li>
+	
 	<li><%= link_to 'Usuários', users_path %></li>
-	<li><%=	link_to 'Novo usuário', controller: :users, action: :new %></li>
+	<li><%=	link_to 'Novo usuário', new_user_registration_path %></li>
+	<li><%=	link_to 'Novo usuário (Antigo)', controller: :users, action: :new %></li>
 	<li><%= link_to 'Simulações', simulations_path %></li>
+	<li><%=	link_to 'Sair', destroy_user_session_path, method: :delete %></li>
+	<% end %>
 </ul>
 
 

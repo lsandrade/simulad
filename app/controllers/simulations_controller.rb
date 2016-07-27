@@ -1,6 +1,7 @@
 class SimulationsController < ApplicationController
   before_action :set_simulation, only: [:show, :edit, :update, :destroy]
   before_action :set_users, only: [ :edit, :update, :new]
+  before_action :authenticate_user!, except: [:index]
 
   def index
     @simulations = Simulation.all

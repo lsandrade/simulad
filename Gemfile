@@ -52,3 +52,6 @@ gem "twitter-bootstrap-rails"
 
 # Easy file attachment management for ActiveRecord https://thoughtbot.com/open-source
 gem "paperclip", "~> 5.0.0"
+
+# devise
+gem 'devise'
