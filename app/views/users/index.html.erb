@@ -1,8 +1,11 @@
 
-<%= form_tag(users_path, :method => :get) do %>
-  <%= text_field_tag 'search', nil, placeholder: 'Entre com o termo' %>
-  <%= submit_tag 'Buscar' %>
+<!-- formulário alterado para pesquisar com Ransack -->
+<%= search_form_for @q do |f| %>
+  <%= f.label :name_cont %>
+  <%= f.search_field :name_cont %>
+  <%= f.submit %>
 <% end %>
+
 
 <%- model_class = User -%>
 <div class="page-header">
@@ -12,8 +15,8 @@
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:name) %></th>
-      <th><%= model_class.human_attribute_name(:email) %></th>
+      <th><%= sort_link(@q, :name) %></th>
+      <th><%= sort_link(@q, :email) %></th>
       <th><%= model_class.human_attribute_name(:birthday) %></th>
       <th><%= model_class.human_attribute_name(:sex) %></th>
       <th><%= model_class.human_attribute_name(:obs) %></th>

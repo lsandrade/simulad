@@ -4,11 +4,13 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    if (params[:search])
-      @users = User.search(params[:search])
-    else
-      @users = User.all
-    end
+    @q = User.ransack(params[:q])
+    @users = @q.result
+    #if (params[:search])
+    #  @users = User.search(params[:search])
+    #else
+    #  @users = User.all
+    #end
     @instance = "Sou uma variável de instância"
   end
 
