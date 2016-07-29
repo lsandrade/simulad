@@ -58,3 +58,8 @@ gem 'devise'
 
 # Ransack
 gem 'ransack'
+
+# Teste Rspec
+group :development, :test do
+  gem 'rspec-rails', '~> 3.5'
+end
