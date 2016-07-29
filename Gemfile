@@ -62,4 +62,7 @@ gem 'ransack'
 # Teste Rspec
 group :development, :test do
   gem 'rspec-rails', '~> 3.5'
+  
+  # Acceptance test framework for web applications http://jnicklas.github.com/capybara/
+  gem 'capybara'
 end
